@@ -1,5 +1,5 @@
-DATA SCIENTIST
-Nome: Renato Gonçalves Lopes Neto 
+
+Renato Gonçalves Lopes Neto 
 
 Atualmente curso Ciência de Dados e Machine Learning no CEUB. Escolhi a área de tecnologia por afinidade com computadores, 
 programação e resolução de problemas. Tenho como objetivo construir uma carreira internacional e morar fora do Brasil.
