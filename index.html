@@ -3,92 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio Profissional | PortfolioHUB</title>
+    <title>PortfolioHUB | Renato Gonçalves</title>
     <style>
-        :root {
-            --bg-color: #0d1117;
-            --card-bg: #161b22;
-            --text-color: #c9d1d9;
-            --accent-color: #58a6ff;
-            --border-color: #30363d;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            margin: 0;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 750px;
-            margin: 0 auto;
-        }
-        h1 {
-            color: #ffffff;
-            font-size: 2.2rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            color: #8b949e;
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-        h2 {
-            color: #ffffff;
-            font-size: 1.4rem;
-            margin-top: 30px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 20px;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-2px);
-            border-color: var(--accent-color);
-        }
-        .card-title {
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: var(--accent-color);
-            margin-bottom: 5px;
-        }
-        .card-desc {
-            color: #8b949e;
-            font-size: 0.95rem;
-            margin: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #0d1117; color: #c9d1d9; line-height: 1.6; padding: 40px 20px; }
+        .container { max-width: 850px; margin: 0 auto; }
+        header { border-bottom: 1px solid #21262d; padding-bottom: 20px; margin-bottom: 30px; }
+        h1 { color: #58a6ff; font-size: 2.5rem; margin-bottom: 10px; }
+        h2 { color: #58a6ff; font-size: 1.5rem; margin: 30px 0 15px 0; border-bottom: 1px solid #21262d; padding-bottom: 5px; }
+        p { margin-bottom: 15px; color: #8b949e; }
+        
+        /* Links e Contatos */
+        .contacts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 20px; }
+        .contacts a { color: #58a6ff; text-decoration: none; font-size: 0.95rem; }
+        .contacts a:hover { text-decoration: underline; }
+
+        /* Estilo das Pastas do Repositório */
+        .directory-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0 40px 0; }
+        .dir-card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 15px; transition: 0.2s; }
+        .dir-card:hover { border-color: #58a6ff; background: #1f242c; }
+        .dir-title { color: #58a6ff; font-weight: bold; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
+        .dir-desc { font-size: 0.85rem; color: #8b949e; }
+
+        /* Seções do Currículo */
+        .skills-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+        .skills-list li { background: #21262d; border: 1px solid #30363d; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; color: #c9d1d9; }
+        .project-card { background: #161b22; border-left: 4px solid #58a6ff; padding: 15px; margin-bottom: 15px; border-radius: 0 6px 6px 0; }
+        .project-card h3 { color: #c9d1d9; font-size: 1.1rem; margin-bottom: 5px; }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>PortfolioHUB</h1>
-        <p class="subtitle">Repositório centralizador de projetos acadêmicos, de engenharia e iniciativas pessoais.</p>
-        
-        <h2>Diretórios do Repositório</h2>
-        <div class="grid">
-            <div class="card">
-                <div class="card-title">📁 projetos-academicos/</div>
-                <p class="card-desc">Códigos, laboratórios e desafios práticos desenvolvidos ao longo da trajetória universitária.</p>
+        <header>
+            <h1>PortfolioHUB</h1>
+            <p><strong>Renato Gonçalves Lopes Neto</strong></p>
+            <p>Atualmente cursando Ciência de Dados e Machine Learning no CEUB. Escolhi a área de tecnologia por afinidade com computadores, programação e resolução de problemas. Tenho como objetivo construir uma carreira internacional.</p>
+            
+            <div class="contacts">
+                <div>📞 +55 (61) 98159-4124</div>
+                <div>✉️ <a href="mailto:renatolopesvp@gmail.com">renatolopesvp@gmail.com</a></div>
+                <div>🐙 <a href="https://github.com/Lopess01" target="_blank">github.com/Lopess01</a></div>
+                <div>💼 <a href="https://www.linkedin.com/in/renatolopes04" target="_blank">linkedin.com/in/renatolopes04</a></div>
             </div>
-            <div class="card">
-                <div class="card-title">📁 projetos-pessoais/</div>
-                <p class="card-desc">Aplicações independentes, scripts de automação e estudos de tecnologias emergentes.</p>
+        </header>
+
+        <h2>📁 Estrutura de Diretórios</h2>
+        <p>Pastas organizadas e monitoradas via Git local:</p>
+        <div class="directory-grid">
+            <div class="dir-card">
+                <div class="dir-title">📁 projetos-academicos/</div>
+                <div class="dir-desc">Códigos, laboratórios e desafios práticos desenvolvidos ao longo da trajetória universitária.</div>
             </div>
-            <div class="card">
-                <div class="card-title">📁 documentacao/</div>
-                <p class="card-desc">Materiais de apoio, apresentações em slide e documentações técnicas complementares.</p>
+            <div class="dir-card">
+                <div class="dir-title">📁 projetos-pessoais/</div>
+                <div class="dir-desc">Aplicações independentes, scripts de automação e estudos de tecnologias emergentes.</div>
             </div>
+            <div class="dir-card">
+                <div class="dir-title">📁 documentacao/</div>
+                <div class="dir-desc">Materiais de apoio, apresentações em slide e documentações técnicas complementares.</div>
+            </div>
+        </div>
+
+        <h2>🎓 Formação Acadêmica</h2>
+        <p><strong>Ciência de Dados e Machine Learning</strong> - UniCEUB (02/2026 a 07/2029)</p>
+
+        <h2>🛠️ Habilidades Técnicas (Hard Skills)</h2>
+        <ul class="skills-list">
+            <li>Python</li>
+            <li>Excel Básico</li>
+            <li>MySQL Básico</li>
+        </ul>
+
+        <h2>🧠 Competências Comportamentais (Soft Skills)</h2>
+        <ul class="skills-list">
+            <li>Aprendizado Rápido</li>
+            <li>Ambição e Visão de Longo Prazo</li>
+            <li>Proatividade</li>
+            <li>Comunicação e Resolução de Problemas</li>
+        </ul>
+
+        <h2>🚀 Projetos em Destaque</h2>
+        <div class="project-card">
+            <h3>Análise de Frotas de Drones com Inteligência de Enxame <span style="font-size: 0.8rem; color: #d18847;">(Em andamento)</span></h3>
+            <p style="font-size: 0.9rem; margin: 0;">Estudo focado na eficiência e lógica de comunicação de grupos de drones para vistorias ambientais, comparando o desempenho de drones individuais com dinâmicas de enxame e aplicação de algoritmos PSO (Particle Swarm Optimization).</p>
         </div>
     </div>
 </body>
