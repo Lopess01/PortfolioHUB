@@ -1,92 +1,237 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PortfolioHUB | Renato Gonçalves</title>
+    <title>O Meu PortfolioHUB</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        body { background-color: #0d1117; color: #c9d1d9; line-height: 1.6; padding: 40px 20px; }
-        .container { max-width: 850px; margin: 0 auto; }
-        header { border-bottom: 1px solid #21262d; padding-bottom: 20px; margin-bottom: 30px; }
-        h1 { color: #58a6ff; font-size: 2.5rem; margin-bottom: 10px; }
-        h2 { color: #58a6ff; font-size: 1.5rem; margin: 30px 0 15px 0; border-bottom: 1px solid #21262d; padding-bottom: 5px; }
-        p { margin-bottom: 15px; color: #8b949e; }
-        
-        /* Links e Contatos */
-        .contacts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 20px; }
-        .contacts a { color: #58a6ff; text-decoration: none; font-size: 0.95rem; }
-        .contacts a:hover { text-decoration: underline; }
+        /* --- ESTILOS CSS (Estética Tech / Dark Dashboard) --- */
+:root {
+    --bg-color: #0b0f19; /* Fundo escuro profundo */
+    --card-bg: #131a2a; /* Fundo dos cards ligeiramente mais claro */
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --accent-color: #00f2fe; /* Azul neon/ciano para destaques */
+    --border-color: #1e293b;
+    --hover-glow: rgba(0, 242, 254, 0.15);
+}
 
-        /* Estilo das Pastas do Repositório */
-        .directory-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0 40px 0; }
-        .dir-card { background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 15px; transition: 0.2s; }
-        .dir-card:hover { border-color: #58a6ff; background: #1f242c; }
-        .dir-title { color: #58a6ff; font-weight: bold; margin-bottom: 5px; display: flex; align-items: center; gap: 8px; }
-        .dir-desc { font-size: 0.85rem; color: #8b949e; }
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
 
-        /* Seções do Currículo */
-        .skills-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
-        .skills-list li { background: #21262d; border: 1px solid #30363d; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; color: #c9d1d9; }
-        .project-card { background: #161b22; border-left: 4px solid #58a6ff; padding: 15px; margin-bottom: 15px; border-radius: 0 6px 6px 0; }
-        .project-card h3 { color: #c9d1d9; font-size: 1.1rem; margin-bottom: 5px; }
+header {
+    background: linear-gradient(180deg, #1a2235 0%, var(--bg-color) 100%);
+    padding: 4rem 1rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 3rem;
+    letter-spacing: -1px;
+    background: linear-gradient(90deg, #fff, var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de brilho no topo do card */
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    transition: background 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: #2d3d5c;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--hover-glow);
+}
+
+.project-card:hover::before {
+    background: var(--accent-color);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: #ffffff;
+    font-size: 1.3rem;
+    word-break: break-all;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-card h3::before {
+    content: '/>';
+    color: var(--accent-color);
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+.project-card p {
+    flex-grow: 1;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.repo-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 1.5rem 0;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.btn-github {
+    display: block;
+    text-align: center;
+    background-color: transparent;
+    color: var(--accent-color);
+    text-decoration: none;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
+}
+
+.btn-github:hover {
+    background-color: var(--accent-color);
+    color: #000;
+}
+
+.loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    grid-column: 1 / -1;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
     </style>
 </head>
 <body>
+
+    <header>
+        <h1>PortfolioHUB</h1>
+        <p>Os meus projetos digitais integrados com o GitHub</p>
+    </header>
+
     <div class="container">
-        <header>
-            <h1>PortfolioHUB</h1>
-            <p><strong>Renato Gonçalves Lopes Neto</strong></p>
-            <p>Atualmente cursando Ciência de Dados e Machine Learning no CEUB. Escolhi a área de tecnologia por afinidade com computadores, programação e resolução de problemas. Tenho como objetivo construir uma carreira internacional.</p>
-            
-            <div class="contacts">
-                <div>📞 +55 (61) 98159-4124</div>
-                <div>✉️ <a href="mailto:renatolopesvp@gmail.com">renatolopesvp@gmail.com</a></div>
-                <div>🐙 <a href="https://github.com/Lopess01" target="_blank">github.com/Lopess01</a></div>
-                <div>💼 <a href="https://www.linkedin.com/in/renatolopes04" target="_blank">linkedin.com/in/renatolopes04</a></div>
-            </div>
-        </header>
-
-        <h2>📁 Estrutura de Diretórios</h2>
-        <p>Pastas organizadas e monitoradas via Git local:</p>
-        <div class="directory-grid">
-            <div class="dir-card">
-                <div class="dir-title">📁 projetos-academicos/</div>
-                <div class="dir-desc">Códigos, laboratórios e desafios práticos desenvolvidos ao longo da trajetória universitária.</div>
-            </div>
-            <div class="dir-card">
-                <div class="dir-title">📁 projetos-pessoais/</div>
-                <div class="dir-desc">Aplicações independentes, scripts de automação e estudos de tecnologias emergentes.</div>
-            </div>
-            <div class="dir-card">
-                <div class="dir-title">📁 documentacao/</div>
-                <div class="dir-desc">Materiais de apoio, apresentações em slide e documentações técnicas complementares.</div>
-            </div>
-        </div>
-
-        <h2>🎓 Formação Acadêmica</h2>
-        <p><strong>Ciência de Dados e Machine Learning</strong> - UniCEUB (02/2026 a 07/2029)</p>
-
-        <h2>🛠️ Habilidades Técnicas (Hard Skills)</h2>
-        <ul class="skills-list">
-            <li>Python</li>
-            <li>Excel Básico</li>
-            <li>MySQL Básico</li>
-        </ul>
-
-        <h2>🧠 Competências Comportamentais (Soft Skills)</h2>
-        <ul class="skills-list">
-            <li>Aprendizado Rápido</li>
-            <li>Ambição e Visão de Longo Prazo</li>
-            <li>Proatividade</li>
-            <li>Comunicação e Resolução de Problemas</li>
-        </ul>
-
-        <h2>🚀 Projetos em Destaque</h2>
-        <div class="project-card">
-            <h3>Análise de Frotas de Drones com Inteligência de Enxame <span style="font-size: 0.8rem; color: #d18847;">(Em andamento)</span></h3>
-            <p style="font-size: 0.9rem; margin: 0;">Estudo focado na eficiência e lógica de comunicação de grupos de drones para vistorias ambientais, comparando o desempenho de drones individuais com dinâmicas de enxame e aplicação de algoritmos PSO (Particle Swarm Optimization).</p>
+        <div id="github-projects-container" class="projects-grid">
+            <p class="loading">A carregar os projetos do GitHub...</p>
         </div>
     </div>
+
+    <script>
+        // ATENÇÃO: Substitua pelo seu nome de utilizador do GitHub!
+        const githubUsername = 'Lopess01'; 
+        
+        const apiUrl = `https://api.github.com/users/${githubUsername}/repos?sort=updated&direction=desc`;
+
+        async function fetchGitHubProjects() {
+            const container = document.getElementById('github-projects-container');
+            
+            try {
+                const response = await fetch(apiUrl);
+                
+                if (!response.ok) {
+                    throw new Error(`Erro na comunicação com o GitHub: ${response.status}`);
+                }
+                
+                const repos = await response.json();
+                
+                // Limpa a mensagem de carregamento
+                container.innerHTML = '';
+                
+                // Filtra para remover forks, exibindo apenas projetos originais (opcional)
+                const portfolioRepos = repos.filter(repo => !repo.fork);
+                
+                if (portfolioRepos.length === 0) {
+                    container.innerHTML = '<p class="loading">Nenhum repositório público encontrado.</p>';
+                    return;
+                }
+
+                // Cria os cartões para cada repositório
+                portfolioRepos.forEach(repo => {
+                    const projectCard = document.createElement('div');
+                    projectCard.className = 'project-card';
+                    
+                    projectCard.innerHTML = `
+                        <h3>${repo.name}</h3>
+                        <p>${repo.description ? repo.description : 'Sem descrição no momento.'}</p>
+                        <div class="repo-stats">
+                            <span>⭐ ${repo.stargazers_count}</span>
+                            <span>🍴 ${repo.forks_count}</span>
+                            <span>${repo.language ? '🔤 ' + repo.language : ''}</span>
+                        </div>
+                        <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="btn-github">Ver no GitHub</a>
+                    `;
+                    
+                    container.appendChild(projectCard);
+                });
+                
+            } catch (error) {
+                console.error('Falha na integração:', error);
+                container.innerHTML = '<p class="loading" style="color: red;">Erro ao carregar os projetos. Verifique se o nome de utilizador está correto ou tente novamente mais tarde.</p>';
+            }
+        }
+
+        // Executa a função quando a página termina de carregar
+        document.addEventListener('DOMContentLoaded', fetchGitHubProjects);
+    </script>
+
 </body>
 </html>
