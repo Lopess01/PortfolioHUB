@@ -3,6 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+    <title>Renato Gonçalves - PortfolioHUB</title>
+    <style>
+        :root {
+            --bg-main: #050b14;
+            --text-main: #e6edf3;
+            --accent-blue: #58a6ff;
+            --accent-green: #238636;
+            --glow-blue: rgba(88, 166, 255, 0.4);
+            --glow-green: rgba(35, 134, 54, 0.6);
+        }
+
+        body {
+            background: radial-gradient(circle at top, #111a2e 0%, var(--bg-main) 100%);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 50px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-container {
+            animation: fadeInDown 1s ease-out;
+        }
+
+        h1 {
+            color: var(--text-main);
+            margin-bottom: 5px;
+            font-size: 2.5rem;
+            letter-spacing: -1px;
+        }
+
+        h1 span {
+            color: var(--text-main);
+        }
+
+        h3 {
+            color: #8b949e;
+            font-weight: 300;
+            margin-top: 0;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .section-title {
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        .links-container {
+            width: 100%;
+            max-width: 450px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efeito interativo interno do botão */
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        /* Botão Principal em Destaque */
+        .btn-green {
+            background-color: rgba(35, 134, 54, 0.1);
+            color: #3fb950;
+            border: 1px solid var(--accent-green);
+            box-shadow: 0 4px 15px rgba(35, 134, 54, 0.1);
+        }
+
+        .btn-green:hover {
+            background-color: var(--accent-green);
+            color: white;
+            box-shadow: 0 0 20px var(--glow-green);
+            transform: translateY(-4px);
+        }
+
+        /* Botões Secundários */
+        .btn-dark {
+            background-color: rgba(255, 255, 255, 0.03);
+            color: var(--text-main);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-dark:hover {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 20px var(--glow-blue);
+            transform: translateY(-4px);
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+=======
     <title>O Meu PortfolioHUB</title>
     <style>
         /* --- ESTILOS CSS (Estética Tech / Dark Dashboard) --- */
@@ -21,217 +159,3 @@ body {
     background-color: var(--bg-color);
     color: var(--text-main);
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
-
-header {
-    background: linear-gradient(180deg, #1a2235 0%, var(--bg-color) 100%);
-    padding: 4rem 1rem 3rem;
-    text-align: center;
-    border-bottom: 1px solid var(--border-color);
-}
-
-header h1 {
-    margin: 0 0 0.5rem 0;
-    font-size: 3rem;
-    letter-spacing: -1px;
-    background: linear-gradient(90deg, #fff, var(--accent-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-header p {
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 3rem auto;
-    padding: 0 1.5rem;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
-}
-
-.project-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 1.8rem;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Efeito de brilho no topo do card */
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: transparent;
-    transition: background 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    border-color: #2d3d5c;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--hover-glow);
-}
-
-.project-card:hover::before {
-    background: var(--accent-color);
-}
-
-.project-card h3 {
-    margin-top: 0;
-    color: #ffffff;
-    font-size: 1.3rem;
-    word-break: break-all;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.project-card h3::before {
-    content: '/>';
-    color: var(--accent-color);
-    font-family: monospace;
-    font-size: 1rem;
-}
-
-.project-card p {
-    flex-grow: 1;
-    font-size: 0.95rem;
-    color: var(--text-muted);
-}
-
-.repo-stats {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin: 1.5rem 0;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-.btn-github {
-    display: block;
-    text-align: center;
-    background-color: transparent;
-    color: var(--accent-color);
-    text-decoration: none;
-    padding: 0.7rem 1rem;
-    border: 1px solid var(--accent-color);
-    border-radius: 8px;
-    font-weight: 600;
-    transition: all 0.2s;
-    letter-spacing: 0.5px;
-}
-
-.btn-github:hover {
-    background-color: var(--accent-color);
-    color: #000;
-}
-
-.loading {
-    text-align: center;
-    font-size: 1.2rem;
-    color: var(--accent-color);
-    grid-column: 1 / -1;
-    animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    0% { opacity: 0.5; }
-    50% { opacity: 1; }
-    100% { opacity: 0.5; }
-}
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>PortfolioHUB</h1>
-        <p>Os meus projetos digitais integrados com o GitHub</p>
-    </header>
-
-    <div class="container">
-        <div id="github-projects-container" class="projects-grid">
-            <p class="loading">A carregar os projetos do GitHub...</p>
-        </div>
-    </div>
-
-    <script>
-        // ATENÇÃO: Substitua pelo seu nome de utilizador do GitHub!
-        const githubUsername = 'Lopess01'; 
-        
-        const apiUrl = `https://api.github.com/users/${githubUsername}/repos?sort=updated&direction=desc`;
-
-        async function fetchGitHubProjects() {
-            const container = document.getElementById('github-projects-container');
-            
-            try {
-                const response = await fetch(apiUrl);
-                
-                if (!response.ok) {
-                    throw new Error(`Erro na comunicação com o GitHub: ${response.status}`);
-                }
-                
-                const repos = await response.json();
-                
-                // Limpa a mensagem de carregamento
-                container.innerHTML = '';
-                
-                // Filtra para remover forks, exibindo apenas projetos originais (opcional)
-                const portfolioRepos = repos.filter(repo => !repo.fork);
-                
-                if (portfolioRepos.length === 0) {
-                    container.innerHTML = '<p class="loading">Nenhum repositório público encontrado.</p>';
-                    return;
-                }
-
-                // Cria os cartões para cada repositório
-                portfolioRepos.forEach(repo => {
-                    const projectCard = document.createElement('div');
-                    projectCard.className = 'project-card';
-                    
-                    projectCard.innerHTML = `
-                        <h3>${repo.name}</h3>
-                        <p>${repo.description ? repo.description : 'Sem descrição no momento.'}</p>
-                        <div class="repo-stats">
-                            <span>⭐ ${repo.stargazers_count}</span>
-                            <span>🍴 ${repo.forks_count}</span>
-                            <span>${repo.language ? '🔤 ' + repo.language : ''}</span>
-                        </div>
-                        <a href="${repo.html_url}" target="_blank" rel="noopener noreferrer" class="btn-github">Ver no GitHub</a>
-                    `;
-                    
-                    container.appendChild(projectCard);
-                });
-                
-            } catch (error) {
-                console.error('Falha na integração:', error);
-                container.innerHTML = '<p class="loading" style="color: red;">Erro ao carregar os projetos. Verifique se o nome de utilizador está correto ou tente novamente mais tarde.</p>';
-            }
-        }
-
-        // Executa a função quando a página termina de carregar
-        document.addEventListener('DOMContentLoaded', fetchGitHubProjects);
-    </script>
-
-</body>
-</html>
